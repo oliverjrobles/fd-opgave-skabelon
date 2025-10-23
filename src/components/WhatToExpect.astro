@@ -1,0 +1,148 @@
+---
+import { Image } from "astro:assets";
+
+import ExpectImg from "@assets/images/test.png";
+---
+
+<section class="expect">
+  <div class="expect__inner">
+    
+    <div class="expect__media">
+      <div class="media__wrap">
+        <Image src={ExpectImg} alt="Team collaborating" />
+      
+        <span class="dec dec--dot"></span>
+        <span class="dec dec--badge"></span>
+      </div>
+    </div>
+
+   
+    <div class="expect__content">
+      <p class="eyebrow">We’ll work with you</p>
+      <h2 class="title">What To Expect</h2>
+
+      <p class="lead">
+        Our collaboration is built on transparency, efficiency, and
+        measurable results. Together, we create strategies tailored to your
+        unique needs and goals.
+      </p>
+
+      <ul class="features">
+        <li>
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 7l-10 10-4-4 2-2 2 2 8-8z" fill="currentColor"/></svg>
+          </span>
+          <div>
+            <strong>Collaborate.</strong>
+            <span>We build actionable strategies that drive sustainable growth.</span>
+          </div>
+        </li>
+
+        <li>
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l4 8H8l4-8zm-6 20h12v-2H6v2z" fill="currentColor"/></svg>
+          </span>
+          <div>
+            <strong>Independent perspective.</strong>
+            <span>Objective guidance to optimize performance and results.</span>
+          </div>
+        </li>
+
+        <li>
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <strong>Transparent process.</strong>
+            <span>Clear milestones, ownership, and measurable outcomes.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  
+  .expect{
+    background:#ffffff;
+  }
+  .expect__inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:64px 24px;
+    display:grid;
+    grid-template-columns: 1.15fr 1fr; 
+    gap:40px;
+    align-items:center;
+  }
+
+  /* Media */
+  .expect__media{}
+  .media__wrap{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow: 0 16px 40px rgba(0,0,0,.20);
+  }
+  .media__wrap :where(img){
+    display:block;
+    width:100%;
+    height:360px;
+    object-fit:cover;
+  }
+
+  /* Små dekorative elementer (dot-grid + badge) */
+  .dec{ position:absolute; pointer-events:none; }
+  .dec--dot{
+    left:-20px; top:-20px; width:120px; height:120px; opacity:.55;
+    background-image: radial-gradient(#d9d9d9 1.2px, transparent 1.2px);
+    background-size: 10px 10px; border-radius:12px; filter:contrast(1.1);
+  }
+  .dec--badge{
+    right:-14px; bottom:-14px; width:84px; height:30px;
+    background:#38a169; border-radius:14px;
+    box-shadow: 0 8px 24px rgba(56,161,105,.35);
+  }
+
+  /* Content */
+  .expect__content{ color:#111; }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:12px; font-weight:700;
+    color:#6b7280; margin:0 0 8px;
+  }
+  .title{
+    font-size:28px; line-height:1.2; margin:0 0 12px; font-weight:800;
+  }
+  .lead{
+    color:#4b5563; margin:0 0 18px; line-height:1.6; max-width:520px;
+  }
+
+  .features{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+  .features li{
+    display:grid; grid-template-columns: 36px 1fr; gap:12px;
+    align-items:start;
+  }
+  .features strong{ display:block; font-weight:700; }
+  .features span{ display:block; color:#6b7280; font-size:14px; line-height:1.5; }
+
+  .ico{
+    width:36px; height:36px; border-radius:999px;
+    display:grid; place-items:center;
+    background:#111; color:#f4b000; 
+    box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  }
+  .ico svg{ width:18px; height:18px; }
+
+  /* Responsive */
+  @media (max-width: 1024px){
+    .expect__inner{ grid-template-columns:1fr; }
+    .media__wrap :where(img){ height:320px; }
+  }
+  @media (max-width: 640px){
+    .expect__inner{ padding:48px 20px; }
+    .media__wrap :where(img){ height:260px; }
+  }
+</style>

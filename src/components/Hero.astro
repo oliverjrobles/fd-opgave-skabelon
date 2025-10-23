@@ -1,30 +1,59 @@
 ---
 import { Image } from "astro:assets";
-import Services from "./Services.astro";
 import CEOImage from "@assets/images/ceo.png";
 ---
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Empowering Your Business Growth</h1>
-    <p>
-      Discover tailored strategies and expert insights to take your business to
-      the next level. Let us help you navigate challenges and achieve
-      sustainable success.
-    </p>
-    <a href="#0">Book a Meeting</a>
-  </div>
-  <Image src={CEOImage} alt="CEO" />
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Empowering Your Business Growth</h1>
+      <p>
+        Discover tailored strategies and expert insights to take your business to
+        the next level. Let us help you navigate challenges and achieve
+        sustainable success.
+      </p>
+      <a class="hero-btn" href="#0">Book a Meeting</a>
+    </div>
 
-  <Services />
+    <div class="hero-image">
+      <Image src={CEOImage} alt="CEO" />
+    </div>
+  </div>
 </section>
 
 <style>
-  /* Styles her */
-  @layer components {
-    .hero {
-      background-color: #f3f4f6;
-      padding: 2rem;
-    }
+  .hero {
+    background-color: #1f1f1f;
+    color: #fff;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .hero-content { flex: 1; }
+  .hero-content h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 1rem; }
+  .hero-content p { font-size: 1rem; color: #ccc; margin-bottom: 2rem; max-width: 500px; }
+
+  .hero-btn {
+    background-color: #ffffff; color: #000;
+    padding: 0.75rem 1.75rem; border-radius: 25px;
+    text-decoration: none; font-weight: 600;
+    transition: background-color .3s;
+  }
+  .hero-btn:hover { background-color: #ffda63; }
+
+  .hero-image { flex: 1; display: flex; justify-content: center; }
+  .hero-image :where(img) { max-width: 100%; border-radius: 12px; object-fit: cover; }
+
+  @media (max-width: 900px) {
+    .hero-inner { flex-direction: column; text-align: center; padding: 3rem 1.5rem; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-image { margin-top: 2rem; }
   }
 </style>
