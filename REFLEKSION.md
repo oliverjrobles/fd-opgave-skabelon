@@ -1,0 +1,4 @@
+# REFLEKSION OVER OPGAVEN
+
+Min refleksion over denne opgave er, at den var vanskeligt at lave. Timingen af opgaven op til efterårsferien gjorde sådan at man blev en smule mere distraheret end forventet. Om selve opgaven, skulle jeg lige varme op til at bruge astro igen, siden sidste semester. Efter at havde kommet igennem de første komponenter af hjemmesiden, var jeg blevet mere komfortabel med at lave FinancialProjections.astro og WhatToExpect.astro. Selvom jeg ikke helt nåede i mål med at kode hele projektet, har jeg opnået en klar faglig forståelse for arbejdet med Astro og moderne webudvikling. Jeg har desuden brugt JSON-data til at generere dynamisk indhold og arbejdet med semantisk HTML og responsivt CSS-layout. Jeg har lært at anvende GitHub til versionsstyring, håndteret et fork korrekt og deployet projektet på Netlify.
+Samlet viser opgaven forståelse for hele udviklingsprocessen, fra struktur og datahåndtering til styling og deployment.
